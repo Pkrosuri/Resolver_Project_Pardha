@@ -2,7 +2,7 @@ import time
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-service_obj = Service("E:\\Resolver_Project_Pardha\\chromedriver-win64\\chromedriver.exe")
+service_obj = Service("E:\\Project\\chromedriver-win64\\chromedriver.exe")
 from PageObjects.HomePageObjects import HomePageObj
 
 @pytest.fixture()
@@ -10,7 +10,7 @@ def setup_and_teardown():
     driver = webdriver.Chrome(service=service_obj)
     driver.maximize_window()
     driver.implicitly_wait(10)
-    driver.get("file:///E:/Resolver_Project_Pardha/Automation_Challenge_Guide/QE-index.html")
+    driver.get("file:///E:/Project/Automation_Challenge_Guide/QE-index.html")
     yield driver
     driver.quit()
     time.sleep(1)
